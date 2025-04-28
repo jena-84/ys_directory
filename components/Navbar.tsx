@@ -48,10 +48,9 @@ const Navbar = async() => {
                       await signIn("github")
                     }}
                   >
-                    <button type="submit">
-                      <span className="max-sm:hidden">Logout</span>
+                   
                       <button type="submit">Login</button>
-                    </button>
+              
                   </form>
                 )}
             </div>
