@@ -50,7 +50,7 @@ const Navbar = async() => {
                   >
                     <button type="submit">
                       <span className="max-sm:hidden">Logout</span>
-                      <LogOut className="size-6 sm:hidden text-red-500"/>
+                      <button type="submit">Login</button>
                     </button>
                   </form>
                 )}
