@@ -20,7 +20,7 @@ export default async function Home({
 
  //Extract session
  const session = await auth()
- console.log(session?.id)
+//  console.log(session?.id)
  
   // ---------Fetching Posts from Sanity--------------
   //const posts = await client.fetch(STARTUPS_QUERY); // Fetch the posts from Sanity (OLD FETCH)
