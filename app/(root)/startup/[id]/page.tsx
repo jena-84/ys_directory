@@ -1,5 +1,5 @@
 import { client } from "@/sanity/lib/client";
-import {STARTUP_BY_ID_QUERY} from "@/sanity/lib/queries";
+import {PLAYLIST_BY_SLUG_QUERY,STARTUP_BY_ID_QUERY,} from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,13 +22,14 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   // const post = await client.fetch(STARTUP_BY_ID_QUERY, { id }); // Fetch the post from Sanity CLient with the ID to perform ISR
   // console.log('post is ---->',post)
-
+//  const {select :editorPosts} = await client.fetch(PLAYLIST_BY_SLUG_QUERY, {slug: "editor-picks"}); //fetching the editor picks from the Sanity client
+// console.log('editor posts are ---->',editorPosts)
   //fetching the post and editor picks at the same time using Promise.all using parallel fetching
   // This is to improve the performance of the page and reduce the loading time
   const [post, { select: editorPosts }] = await Promise.all([
     client.fetch(STARTUP_BY_ID_QUERY, { id }),
     client.fetch(PLAYLIST_BY_SLUG_QUERY, {
-      slug: "editor-picks-new",
+      slug: "editor-picks",
     }),
   ]);
 
